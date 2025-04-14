@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <th:block th:replace="~{fragments/menu::menuFragment}"></th:block>
+    <h1>단을 입력하세요!</h1>
+    <form method="post" action="/table_input">
+      단 <input type="text" name="data1">
+      <button type="submit">입력완료</button>
+    </form>
+</body>
+</html>
