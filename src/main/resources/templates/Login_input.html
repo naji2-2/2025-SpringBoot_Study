@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <th:block th:replace="~{fragments/menu::menuFragment}"></th:block>
+    <h1>Login</h1>
+    <form method="post" action="Login_input">
+      아이디 <input type="text" name="user_id"><br/>
+      비밀번호 <input type="text" name="user_pw"><br/>
+      <button type="submit">입력완료</button>
+
+    </form>
+</body>
+</html>
