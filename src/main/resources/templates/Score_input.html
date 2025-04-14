@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <th:block th:replace="~{fragments/menu::menuFragment}"></th:block>
+    <h1>Score</h1>
+    <form method="post" action="/Score_input">
+      이름 <input type="text" name="name"><br/>
+      국어 <input type="text" name="kor"><br/>
+      영어 <input type="text" name="eng"><br/>
+      수학 <input type="text" name="math"><br/>
+      <button type="submit">입력완료</button>
+    </form>
+</body>
+</html>
