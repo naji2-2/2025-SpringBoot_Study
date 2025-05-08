@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hs.kr.study.MyBatisPrj.DAO.MemoDAO">
+<!--    namespace: dao가 있는 풀패키지를 작성-->
+
+    <insert id="insert" parameterType="hs.kr.study.MyBatisPrj.DTO.MemoDTO">
+        insert into memo(IDX, WRITER, MEMO) values(memo_seq.nextval, #{writer}, #{memo}) <!--dto의 멤버변수를 지정할 때는 #{}를 이용-->
+
+    </insert>
+
+    <select id="listAll" resultType="hs.kr.study.MyBatisPrj.DTO.MemoDTO">
+        select * from memo order by idx desc
+    </select>
+
+</mapper>
