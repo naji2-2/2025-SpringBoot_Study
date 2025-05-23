@@ -14,7 +14,7 @@ public interface MemoDAO {
     public void insert(MemoDTO dto);
 
     // 2. update
-    public void update(int idx);
+    public void update(MemoDTO dto);
 
     // 3. delete
     public void delete(int idx);
@@ -22,4 +22,5 @@ public interface MemoDAO {
     // 4. select
     public List<MemoDTO> listAll();
 
+    public MemoDTO selectOne(int idx);
 }

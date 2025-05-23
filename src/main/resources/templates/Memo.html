@@ -2,9 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Memo</title>
 </head>
 <style>
+    div {
+        padding : 5px;
+    }
     button {
       background-color: #555555;
       border: none;
@@ -15,17 +18,40 @@
       display: inline-block;
       font-size: 10px;
     }
+    tr {
+        border: 1px;
+    }
 </style>
 <body>
-    <h1 th:text="'Note Memo'"></h1>
+<th:block th:replace="~{fragments/menu::menuFragment}"></th:block>
+<h1 th:text="'Note Memo'"></h1>
+    <div>
+        <form method="post" action="Memo_input">
+            writer</br>
+            <input type="text" name="writer"></br>
+            memo</br>
+            <input type="text" name="memo"></br>
+            <button type="submit">Done</button>
+        </form>
+    </div>
 
-    <form method="post" action="Memo_input">
-        writer</br>
-        <input type="text" name="writer"></br>
-        memo</br>
-        <input type="text" name="memo"></br>
-        <button type="submit">Done</button>
-    </form>
-
+    <table>
+        <tr>
+            <th th:text="ID"></th>
+            <th th:text="Writer"></th>
+            <th th:text="Memo"></th>
+            <th th:text="Post_Data"></th>
+            <th th:text="ETC"></th>
+        </tr>
+        <tr th:each="item:${data}">
+            <td th:text="${item.idx}"></td>
+            <td th:text="${item.writer}"></td>
+            <td th:text="${item.memo}"></td>
+            <td th:text="${item.post_date}"></td>
+            <td><a th:href="@{'/edit/'+${item.idx}}">Update</a>
+                <a th:href="@{'/delete/'+${item.idx}}">Delete</a>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Memo</title>
+</head>
+<style>
+    div {
+        padding : 5px;
+    }
+    button {
+      background-color: #555555;
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 10px;
+    }
+    tr {
+        border: 1px;
+    }
+</style>
+<body>
+<th:block th:replace="~{fragments/menu::menuFragment}"></th:block>
+<h1 th:text="'Note Memo'"></h1><br/>
+    <div>
+        <form method="post" action="/edit">
+        writer</br>
+          <input type="hidden" th:value="${one.idx}" name="idx">
+        <input type="text" name="writer" th:value="${one.writer}"></br>
+        memo</br>
+          <textarea name="memo" th:text="${one.memo}"></textarea></br>
+        <button type="submit">Done</button>
+        </form>
+    </div>
+
+</body>
+</html>

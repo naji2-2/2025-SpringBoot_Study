@@ -12,4 +12,13 @@
         select * from memo order by idx desc
     </select>
 
+    <select id="selectOne" resultType="hs.kr.study.MyBatisPrj.DTO.MemoDTO">
+        select * from memo where idx=#{idx}
+    </select>
+
+    <update id="update" parameterType="hs.kr.study.MyBatisPrj.DTO.MemoDTO">
+        update memo set MEMO = #{memo}, WRITER = #{writer} where idx=#{idx}
+    </update>
+
+
 </mapper>
