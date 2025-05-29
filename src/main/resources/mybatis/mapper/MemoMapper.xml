@@ -20,5 +20,8 @@
         update memo set MEMO = #{memo}, WRITER = #{writer} where idx=#{idx}
     </update>
 
+    <delete id="delete" parameterType="hs.kr.study.MyBatisPrj.DTO.MemoDTO">
+        delete from memo where idx=#{idx}
+    </delete>
 
 </mapper>

@@ -49,4 +49,18 @@ public class MemoController {
         memoService.update(dto);
         return "redirect:/Memo";
     }
+
+    @GetMapping("/delete/{idx}")
+    public String delete_form(@PathVariable ("idx") int idx, Model model){
+        System.out.println(idx);
+        memoService.delete(idx);
+        return "redirect:/Memo";
+    }
+
+//    @PostMapping("/delete")
+//    public String delete(MemoDTO dto){
+//        memoService.delete(dto);
+//        return "redirect:/Memo";
+//    }
+
 }
