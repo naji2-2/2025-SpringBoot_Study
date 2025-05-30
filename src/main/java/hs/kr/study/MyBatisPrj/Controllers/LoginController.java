@@ -1,4 +1,4 @@
-package hs.kr.study.MyBatisPrj;
+package hs.kr.study.MyBatisPrj.Controllers;
 
 import hs.kr.study.MyBatisPrj.DTO.LoginDTO;
 import org.springframework.stereotype.Controller;
